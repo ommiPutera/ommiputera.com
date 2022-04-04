@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Button({ title, Icon }) {
   return (
     <Link href="/contact">
-      <button className='group hover:outline hover:outline-3 hover:outline-offset-2 hover:outline-dark-gray-500 delay-75 mt-4 bg-black px-8 py-3 rounded-full text-light-gray text-xs flex space-x-3 items-center'>
+      <button className='group hover:outline hover:outline-[2px] hover:outline-offset-[3px] hover:outline-black delay-75 bg-black px-10 py-[17px] rounded-full text-light-gray text-xs flex space-x-3 items-center transition-all duration-300 ease-in-out'>
         <span>{title}</span>
         {Icon ?
           <Icon />

@@ -2,7 +2,7 @@ import React from 'react'
 import useScrollBlock from '../../hooks/useScrollBlock'
 import Footer from './footer'
 import Header from './header'
-import { BurgerMenu, SideMenu } from './shared'
+import { BurgerMenu, SideMenu } from '../shared'
 import { useRouter } from 'next/router'
 
 export default function Layout({ children }) {
@@ -23,12 +23,13 @@ export default function Layout({ children }) {
       <BurgerMenu open={openSideNav} onClick={() => setOpenSideNav(!openSideNav)}>
         <SideMenu
           open={openSideNav}
+          setOpen={setOpenSideNav}
           activePage={indicatorActive}
           blockScroll={blockScroll}
           allowScroll={allowScroll}
         />
       </BurgerMenu>
-      <div className="container mx-auto">
+      <div className="container mx-auto z-30">
         <Header />
         <div className="my-6 mx-4 md:mx-16 lg:mx-28">
           <main className="min-h-screen">

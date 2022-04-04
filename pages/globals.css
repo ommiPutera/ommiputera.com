@@ -12,16 +12,24 @@ body::-webkit-scrollbar {
 
 .animate__pop {
   animation: pop 0.3s ease-in-out;
+  transition-delay: 75ms;
+}
+
+.animate__pop__image {
+  animation: pop_image 0.2s ease-in;
+  transition-delay: 75ms;
+}
+
+.animate__text {
+  animation: text_ 0.3s ease-in-out;
+  transition-delay: 75ms;
+  @apply transition-all;
+}
+
+.animate__component {
+  animation: comp_ 0.3s ease-in-out;
   transition-delay: 100ms;
-}
-
-.animate__from__top__to__bottom {
-  animation: fromTopToBottom 0.1s ease;
-  @apply transition-all !duration-700 delay-150;
-}
-
-.animate__from__right__to__left {
-  animation: fromRightToLeft 5s infinite;
+  @apply transition-all;
 }
 
 @keyframes pop {
@@ -29,27 +37,46 @@ body::-webkit-scrollbar {
     transform: scale(1);
   }
   50% {
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   0% {
     transform: scale(1);
   }
 }
 
-@keyframes fromTopToBottom {
+@keyframes pop_image {
   100% {
-    width: 100vh;
+    transform: scale(1);
   }
   0% {
-    width: 0;
+    transform: scale(1.1);
   }
 }
 
-@keyframes fromRightToLeft {
+@keyframes text_ {
+  100% {
+    transform: translate(0, 0);
+    @apply opacity-100;
+  }
   50% {
-    transform: translate(100%, 0);
+    @apply opacity-50;
   }
   0% {
-    transform: translate(-100%, 0);
+    transform: translate(0, 4%);
+    @apply opacity-10;
+  }
+}
+
+@keyframes comp_ {
+  100% {
+    transform: translate(0, 0);
+    @apply opacity-100;
+  }
+  50% {
+    @apply opacity-60;
+  }
+  0% {
+    transform: translate(0, 8%);
+    @apply opacity-30;
   }
 }
