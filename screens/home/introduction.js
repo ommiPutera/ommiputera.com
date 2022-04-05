@@ -32,7 +32,7 @@ function Introduction() {
         </div>
       </CenterContent>
       <div className="hidden md:block absolute right-0">
-        <Marquee speed={35} gradient={false}>
+        <Marquee speed={25} gradient={false}>
           <h1 className="text-9xl text-black/80 font-light">Ommi Putera Karunia - Frontend Engineer - </h1>
         </Marquee>
       </div>

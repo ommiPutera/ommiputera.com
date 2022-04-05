@@ -1,9 +1,3 @@
-export default function Contact() {
-  return (
-    <div>
-      <h1 className="mb-96">Ommi Putera</h1>
+import Contact from "../screens/contact";
 
-      <h1 className="bg-red-50">Contact</h1>
-    </div>
-  )
-}
+export default Contact;
