@@ -15,7 +15,7 @@ export default function Header() {
   }, [router.pathname])
 
   return (
-    <section className="flex items-center flex-grow justify-between top-0 z-10 sticky border-b md:border-none bg-white lg:bg-light-gray md:relative text-black font-semibold text-base md:mt-12 mb-3 mt-0 px-6 md:px-0 py-6 sm:mt-8 sm:mx-10 md:mx-16 lg:mx-28">
+    <section className="flex items-center flex-grow justify-between top-0 z-10 sticky border-b md:border-none bg-white lg:bg-light-gray md:relative text-black font-semibold text-base md:mt-8 mb-3 mt-0 px-6 md:px-0 py-6 md:py-4 sm:mt-8 sm:mx-10 md:mx-16 lg:mx-28">
       <div className="w-1/3 hidden xl:block">
         <div className="flex space-x-3">
           <Image src="/indonesia-flag.svg" loading='eager' width="16" height="16" />
