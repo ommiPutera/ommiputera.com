@@ -17,7 +17,7 @@ function NavigationGuide() {
   }, []);
 
   return (
-    <div className={`${scrollY < 600 ? "absolute animate__text" : "fixed animate__component"}`}>
+    <div className={`lg:left-7 xl:left-auto ${scrollY < 600 ? "absolute animate__text" : "fixed animate__component"}`}>
       <div className='flex relative h-full mt-20 space-x-4'>
         <span className='w-[2px] bg-dark-gray/30' />
         <span className={`absolute -left-5 ${scrollY < 600 ? "" : "transition-all duration-150"} ${scrollY < 600 && "top-[21px]"} ${(scrollY >= 600 && scrollY <= 1300) && "top-[75px]"} ${(scrollY >= 1300 && scrollY <= 2000) && "top-[130px]"} ${(scrollY > 2000) && "top-[183px]"}`}>
