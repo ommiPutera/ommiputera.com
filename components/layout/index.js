@@ -19,7 +19,6 @@ export default function Layout({ children }) {
     }
   }, [router.pathname])
 
-
   React.useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);

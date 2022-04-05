@@ -9,11 +9,11 @@ import SocialMedia from '../../components/socialMedia'
 function Introduction() {
   return (
     <div className="min-h-screen">
-      <div className='relative'>
+      <div className='hidden md:block'>
         <NavigationGuide />
       </div>
       <CenterContent className="block mt-8 mb-2 md:flex md:items-center md:justify-center md:divide-x-2">
-        <div className='md:col-span-1 flex items-center lg:ml-10 xl:ml-28 md:w-[320px] md:h-[320px]'>
+        <div className='md:col-span-1 flex items-center 2xl:ml-28 xl:ml-60 w-[250px] h-[250px] 2xl:w-[320px] 2xl:h-[320px]'>
           <Image src="/profile-home.svg" layout="fixed" width="380" height="380" />
         </div>
         <div className='md:col-span-1 mt-12 md:mt-0 md:pl-10 flex flex-col items-start justify-center'>

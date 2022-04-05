@@ -18,11 +18,11 @@ export function Indicator({ active, position }) {
 export function BurgerMenu({ scrollY, open, onClick, children }) {
   return (
     <React.Fragment>
-      <button className={`fixed z-30 right-4 md:right-12 top-0 md:top-16 bg-brown rounded-full p-3 ${scrollY > 300 ? "visible" : "invisible"}`} onClick={onClick}>
+      <button className={`fixed z-40 right-4 md:right-12 md:top-16 bg-brown rounded-full p-2 md:p-3 ${scrollY > 300 ? "visible" : "visible md:invisible"}`} onClick={onClick}>
         {open ?
-          <XIcon className="h-8 w-8 text-white animate__pop" />
+          <XIcon className="h-6 w-6 md:h-8 md:w-8 text-white animate__pop" />
           :
-          <MenuIcon className="h-8 w-8 text-white animate__pop" />
+          <MenuIcon className="h-6 w-6 md:h-8 md:w-8 text-white animate__pop" />
         }
       </button>
       {children}
@@ -34,7 +34,7 @@ export function SideMenu({ open, setOpen, activePage, blockScroll, allowScroll }
   if (open) blockScroll()
   if (!open) allowScroll()
   return (
-    <div className={`w-full flex justify-end`}>
+    <div className={`w-full top-0 flex justify-end`}>
       <div onClick={() => setOpen(!open)} className={`fixed z-20 bg-gradient-to-r from-light-gray to-black opacity-10 h-screen duration-500 ease-in-out ${open ? "block w-full" : "invisible"}`}>
       </div>
       <div className={`fixed overflow-hidden z-20 bg-black h-screen duration-500 ease-in-out text-white ${open ? "block w-full md:w-1/4" : "w-0 invisible"}`}>

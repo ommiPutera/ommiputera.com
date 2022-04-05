@@ -1,25 +1,29 @@
 import Link from 'next/link'
 import React from 'react'
-import { Indicator } from '../shared'
+import { BurgerMenu, Indicator, SideMenu } from '../shared'
 import { useRouter } from 'next/router'
+import useScrollBlock from '../../hooks/useScrollBlock'
 
 export default function Header() {
   const router = useRouter()
+  const [openSideNav, setOpenSideNav] = React.useState(false)
   const [indicatorActive, setIndicatorActive] = React.useState('')
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   React.useEffect(() => {
     if (router.pathname) {
+      setOpenSideNav(false)
       setIndicatorActive(router.pathname)
     }
   }, [router.pathname])
 
   return (
-    <section className="flex items-center flex-grow justify-between text-black font-semibold text-base py-6 mx-6 sm:mx-10 md:mx-16 lg:mx-28">
+    <section className="flex items-center flex-grow justify-between top-0 z-30 sticky md:relative text-black font-semibold text-base md:py-6 sm:mx-10 md:mx-16 lg:mx-28">
       <div className="w-1/3 hidden md:block">
         <h3 className="leading-4">Located <br /> in Indonesia</h3>
       </div>
       <Link href="/">
-        <a className="w-full flex flex-col items-center hover:opacity-80 space-y-2.5">
+        <a className="w-full hidden md:flex flex-col items-center hover:opacity-80 space-y-2.5">
           <span>Code by Ommi</span>
           <Indicator active={indicatorActive === '/'} />
         </a>
