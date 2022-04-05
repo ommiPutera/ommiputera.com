@@ -1,18 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
-import { BurgerMenu, Indicator, SideMenu } from '../shared'
+import { Indicator } from '../shared'
 import { useRouter } from 'next/router'
-import useScrollBlock from '../../hooks/useScrollBlock'
 
 export default function Header() {
   const router = useRouter()
-  const [openSideNav, setOpenSideNav] = React.useState(false)
   const [indicatorActive, setIndicatorActive] = React.useState('')
-  const [blockScroll, allowScroll] = useScrollBlock();
 
   React.useEffect(() => {
     if (router.pathname) {
-      setOpenSideNav(false)
       setIndicatorActive(router.pathname)
     }
   }, [router.pathname])

@@ -26,9 +26,9 @@ body::-webkit-scrollbar {
   @apply transition-all;
 }
 
-.animate__component {
-  animation: comp_ 0.3s ease-in-out;
-  transition-delay: 100ms;
+.animate__burger {
+  animation: burger_ 0.6s ease-in-out;
+  transition-delay: 200ms;
   @apply transition-all;
 }
 
@@ -77,6 +77,20 @@ body::-webkit-scrollbar {
   }
   0% {
     transform: translate(0, 12%);
+    @apply opacity-30;
+  }
+}
+
+@keyframes burger_ {
+  100% {
+    transform: translate(0, 0);
+    @apply opacity-100;
+  }
+  50% {
+    @apply opacity-60;
+  }
+  0% {
+    transform: translate(0, -160%);
     @apply opacity-30;
   }
 }
