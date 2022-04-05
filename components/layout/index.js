@@ -43,7 +43,7 @@ export default function Layout({ children }) {
       </BurgerMenu>
       <div className="container mx-auto z-30">
         <Header />
-        <div className="sm:my-6 sm:mx-2 md:mx-16 lg:mx-28">
+        <div className="sm:my-12 sm:mx-2 md:mx-16 lg:mx-28">
           <main className="min-h-screen">
             {children}
           </main>

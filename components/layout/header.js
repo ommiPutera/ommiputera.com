@@ -14,7 +14,7 @@ export default function Header() {
   }, [router.pathname])
 
   return (
-    <section className="flex items-center flex-grow justify-between top-0 z-30 sticky md:relative text-black font-semibold text-base md:py-6 sm:mx-10 md:mx-16 lg:mx-28">
+    <section className="flex items-center flex-grow justify-between top-0 z-30 sticky md:relative text-black font-semibold text-base md:pt-12 pb-3 sm:mx-10 md:mx-16 lg:mx-28">
       <div className="w-1/3 hidden md:block">
         <h3 className="leading-4">Located <br /> in Indonesia</h3>
       </div>
