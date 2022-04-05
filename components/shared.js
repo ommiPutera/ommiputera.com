@@ -9,7 +9,7 @@ export function Indicator({ active, position, className }) {
         ?
         <div className={`w-[10px] h-[10px] rounded-full ${className} ${active ? "bg-brown" : "bg-transparent"}`}></div>
         :
-        <div className={`absolute bottom-0 w-[14px] h-[4.5px] rounded-full ${className} ${active ? "bg-black" : "bg-transparent"}`}></div>
+        <div className={`absolute bottom-0 w-[14px] h-[4px] rounded-full ${className} ${active ? "bg-black" : "bg-transparent"}`}></div>
       }
     </React.Fragment>
   )

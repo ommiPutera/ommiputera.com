@@ -1,6 +1,6 @@
 export default function CenterContent({ children, className }) {
   return (
-    <div className={`mx-[0px] lg:mx-4 2xl:mx-[180px] md:grid md:grid-cols-2 ${className}`}>
+    <div className={`lg:mx-[0px] xl:mx-28 2xl:mx-48 md:grid md:grid-cols-2 ${className}`}>
       {children}
     </div>
   )

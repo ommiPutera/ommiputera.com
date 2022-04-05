@@ -16,19 +16,19 @@ body::-webkit-scrollbar {
 }
 
 .animate__pop__image {
-  animation: pop_image 0.3s linear;
+  animation: pop_image 0.4s linear;
   transition-delay: 200ms;
   @apply transition-all;
 }
 
 .animate__text {
-  animation: text_ 0.3s ease-in-out;
+  animation: text_ 0.4s ease-in-out;
   transition-delay: 75ms;
   @apply transition-all;
 }
 
 .animate__component {
-  animation: comp_ 0.3s ease-in-out;
+  animation: comp_ 0.4s ease-in-out;
   transition-delay: 75ms;
   @apply transition-all;
 }
@@ -68,11 +68,11 @@ body::-webkit-scrollbar {
     @apply opacity-100;
   }
   50% {
-    @apply opacity-30;
+    @apply opacity-80;
   }
   0% {
-    transform: translate(0, 13%);
-    @apply opacity-0;
+    transform: translate(0, 19%);
+    @apply opacity-60;
   }
 }
 
