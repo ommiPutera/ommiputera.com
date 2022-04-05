@@ -16,12 +16,19 @@ body::-webkit-scrollbar {
 }
 
 .animate__pop__image {
-  animation: pop_image 0.2s ease-in;
-  transition-delay: 75ms;
+  animation: pop_image 0.4s ease-in-out;
+  transition-delay: 200ms;
+  @apply transition-all;
 }
 
 .animate__text {
   animation: text_ 0.3s ease-in-out;
+  transition-delay: 75ms;
+  @apply transition-all;
+}
+
+.animate__component {
+  animation: comp_ 0.3s ease-in-out;
   transition-delay: 75ms;
   @apply transition-all;
 }
@@ -47,9 +54,11 @@ body::-webkit-scrollbar {
 @keyframes pop_image {
   100% {
     transform: scale(1);
+    @apply opacity-100;
   }
   0% {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    @apply opacity-30;
   }
 }
 
@@ -62,7 +71,7 @@ body::-webkit-scrollbar {
     @apply opacity-50;
   }
   0% {
-    transform: translate(0, 5%);
+    transform: translate(0, 13%);
     @apply opacity-10;
   }
 }
@@ -76,7 +85,7 @@ body::-webkit-scrollbar {
     @apply opacity-60;
   }
   0% {
-    transform: translate(0, 12%);
+    transform: translate(0, 22%);
     @apply opacity-30;
   }
 }
