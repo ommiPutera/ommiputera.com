@@ -38,7 +38,7 @@ export function SideMenu({ open, setOpen, activePage, blockScroll, allowScroll }
       <div onClick={() => setOpen(!open)} className={`fixed z-20 bg-gradient-to-r from-light-gray to-black opacity-10 h-screen duration-500 ease-in-out ${open ? "block w-full" : "invisible"}`}>
       </div>
       <div className={`fixed overflow-hidden z-20 bg-black h-screen duration-500 ease-in-out text-white ${open ? "block w-full md:w-1/4" : "w-0 invisible"}`}>
-        <div className="flex flex-col items-end space-y-12 -mr-4 lg:pr-14 pt-28 lg:pt-44">
+        <div className="flex flex-col items-end space-y-12 pr-8 lg:pr-14 pt-28 lg:pt-44">
           <h1 className="px-11 text-light-gray-500 text-sm">Navigation</h1>
           <ul className="flex flex-col items-end space-y-7 lg:space-y-5">
             <Link href="/">
