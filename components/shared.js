@@ -15,14 +15,14 @@ export function Indicator({ active, position }) {
   )
 }
 
-export function BurgerMenu({ open, onClick, children }) {
+export function BurgerMenu({ scrollY, open, onClick, children }) {
   return (
     <React.Fragment>
-      <button className="fixed z-30 right-4 md:right-12 top-0 md:top-16 md:bg-dark-gray rounded-full p-3" onClick={onClick}>
+      <button className={`fixed z-30 right-4 md:right-12 top-0 md:top-16 bg-brown rounded-full p-3 ${scrollY > 300 ? "visible" : "invisible"}`} onClick={onClick}>
         {open ?
-          <XIcon className="h-8 w-8 text-blue-500 animate__pop" />
+          <XIcon className="h-8 w-8 text-white animate__pop" />
           :
-          <MenuIcon className="h-8 w-8 text-blue-500 animate__pop" />
+          <MenuIcon className="h-8 w-8 text-white animate__pop" />
         }
       </button>
       {children}
@@ -42,25 +42,25 @@ export function SideMenu({ open, setOpen, activePage, blockScroll, allowScroll }
           <h1 className="px-11 text-light-gray-500 text-sm">Navigation</h1>
           <ul className="flex flex-col items-end space-y-2">
             <Link href="/">
-              <a className="flex items-center space-x-8">
+              <a className="flex items-center space-x-8" onClick={() => setOpen(false)}>
                 <li className={`text-4xl hover:opacity-70 ${activePage === "/" && "animate__pop"}`}>Home</li>
                 <Indicator active={activePage === "/"} position="vertical" />
               </a>
             </Link>
             <Link href="/contact">
-              <a className="flex items-center space-x-8">
+              <a className="flex items-center space-x-8" onClick={() => setOpen(false)}>
                 <li className={`text-4xl hover:opacity-70 ${activePage === "/contact" && "animate__pop"}`}>Contact</li>
                 <Indicator active={activePage === "/contact"} position="vertical" />
               </a>
             </Link>
             <Link href="/work">
-              <a className="flex items-center space-x-8">
+              <a className="flex items-center space-x-8" onClick={() => setOpen(false)}>
                 <li className={`text-4xl hover:opacity-70 ${activePage === "/work" && "animate__pop"}`}>Work</li>
                 <Indicator active={activePage === "/work"} position="vertical" />
               </a>
             </Link>
             <Link href="/about">
-              <a className="flex items-center space-x-8">
+              <a className="flex items-center space-x-8" onClick={() => setOpen(false)}>
                 <li className={`text-4xl hover:opacity-70 ${activePage === "/about" && "animate__pop"}`}>About</li>
                 <Indicator active={activePage === "/about"} position="vertical" />
               </a>

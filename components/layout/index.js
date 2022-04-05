@@ -9,6 +9,7 @@ export default function Layout({ children }) {
   const router = useRouter()
   const [openSideNav, setOpenSideNav] = React.useState(false)
   const [indicatorActive, setIndicatorActive] = React.useState('')
+  const [scrollY, setScrollY] = React.useState(0);
   const [blockScroll, allowScroll] = useScrollBlock();
 
   React.useEffect(() => {
@@ -18,9 +19,21 @@ export default function Layout({ children }) {
     }
   }, [router.pathname])
 
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <React.Fragment>
-      <BurgerMenu open={openSideNav} onClick={() => setOpenSideNav(!openSideNav)}>
+      <BurgerMenu scrollY={scrollY} open={openSideNav} onClick={() => setOpenSideNav(!openSideNav)}>
         <SideMenu
           open={openSideNav}
           setOpen={setOpenSideNav}
