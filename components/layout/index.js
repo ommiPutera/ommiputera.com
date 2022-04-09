@@ -47,8 +47,8 @@ export default function Layout({ children }) {
           <main className="min-h-screen">
             {children}
           </main>
-          <Footer />
         </div>
+        <Footer />
       </div>
     </React.Fragment>
   )

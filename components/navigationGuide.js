@@ -1,20 +1,9 @@
 import React from 'react'
 import { Indicator } from './shared';
-import { useEffect, useState } from "react";
+import useGetScrollView from '../hooks/useGetScrollView';
 
 function NavigationGuide() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [scrollY] = useGetScrollView();
 
   return (
     <div className={`lg:left-7 xl:left-auto ${scrollY < 600 ? "absolute animate__text" : "fixed animate__component"}`}>
