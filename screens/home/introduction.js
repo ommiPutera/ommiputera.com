@@ -18,8 +18,8 @@ function Introduction() {
             <Image src="/profile-home.svg" loading='eager' layout="fixed" width="380" height="380" />
           </div>
           <div className='md:col-span-6 mt-12 md:mt-0 md:pl-10 flex flex-col items-start justify-center'>
-            <h1 className='text-3xl lg:text-[30px] leading-[39px] lg:leading-[36px] font-normal animate__text'>I am a <span className='text-brown font-medium'>Front-end</span> Engineer <br /> & Design Enthusiast.</h1>
-            <h1 className='text-3xl lg:text-[30px] leading-[39px] lg:leading-[36px] font-normal text-black/60 animate__text mt-3'>Helping brands to stand out.</h1>
+            <h1 className='text-3xl lg:text-[30px] leading-[39px] lg:leading-[36px] font-medium animate__text'>I am a <span className='text-brown font-medium'>Front-end</span> Engineer <br /> & Design Enthusiast.</h1>
+            <h1 className='text-3xl lg:text-[30px] leading-[39px] lg:leading-[36px] font-medium text-black/60 animate__text mt-3'>Helping brands to stand out.</h1>
             <p className='text-base lg:text-sm mt-14 lg:mt-9 leading-6 animate__text text-black-400'>After I graduated from college, I decided to further develop myself into the digital world.</p>
             <span className="mt-10 md:mt-5 animate__component">
               <Button title="Project" />

@@ -19,13 +19,13 @@ export default function Header() {
       <div className="w-1/3 hidden xl:block">
         <div className="flex space-x-3">
           <Image src="/indonesia-flag.svg" loading='eager' width="16" height="16" />
-          <h3 className="leading-4 text-black/70">Jakarta, Indonesia</h3>
+          <h3 className="leading-4 text-black">Jakarta, Indonesia</h3>
         </div>
       </div>
       <div className='w-full flex justify-start xl:justify-center'>
         <Link href="/">
           <a className="w-fit block md:flex flex-col items-center space-y-2.5 text-black">
-            <span className="text-xl xl:text-[17px]">Ommi Putera</span>
+            <span className="text-xl xl:text-[18px] font-semibold tracking-tight text-black">Ommi Putera</span>
             <Indicator className="hidden md:block" active={indicatorActive === '/'} />
           </a>
         </Link>
