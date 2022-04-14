@@ -1,8 +1,13 @@
 import React from 'react'
+import Link from './Link'
 import { Indicator } from './shared';
 import useGetScrollView from '../hooks/useGetScrollView';
 
-function NavigationGuide() {
+function NavigationGuide({
+  idExperience,
+  idSkillsAndProject,
+  idFooter
+}) {
   const [scrollY] = useGetScrollView();
 
   return (
@@ -14,9 +19,15 @@ function NavigationGuide() {
         </span>
         <ul className='space-y-9 py-4 text-xs font-semibold text-dark-gray'>
           <li onClick={() => window.scrollTo(0, 0)} className={`cursor-pointer transition-all duration-150 ${scrollY < 600 && "text-black text-sm"}`}>Introduction</li>
-          <li onClick={() => window.scrollTo(0, 700)} className={`cursor-pointer transition-all duration-150 ${(scrollY >= 600 && scrollY <= 1300) && "text-black text-sm"}`}>Experiences</li>
-          <li onClick={() => window.scrollTo(0, 1400)} className={`cursor-pointer transition-all duration-150 ${(scrollY >= 1300 && scrollY <= 2000) && "text-black text-sm"}`}>Skills and Projects</li>
-          <li onClick={() => window.scrollTo(0, 2100)} className={`cursor-pointer transition-all duration-150 ${(scrollY > 2000) && "text-black text-sm"}`}>Footer</li>
+          <Link to={`#${idExperience}`}>
+            <li className={`cursor-pointer mt-9 transition-all duration-150 ${(scrollY >= 600 && scrollY <= 1300) && "text-black text-sm"}`}>Experiences</li>
+          </Link>
+          <Link to={`#${idSkillsAndProject}`}>
+            <li className={`cursor-pointer mt-9 transition-all duration-150 ${(scrollY >= 1300 && scrollY <= 2000) && "text-black text-sm"}`}>Skills and Projects</li>
+          </Link>
+          <Link to={`#${idFooter}`}>
+            <li className={`cursor-pointer mt-9 transition-all duration-150 ${(scrollY > 2000) && "text-black text-sm"}`}>Footer</li>
+          </Link>
         </ul>
       </div>
     </div>

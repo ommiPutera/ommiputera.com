@@ -1,12 +1,15 @@
 import Head from "next/head";
 import React from 'react'
+import NavigationGuide from "../../components/navigationGuide";
 import useGetScrollView from "../../hooks/useGetScrollView";
 import Experiences from './experiences';
 import Footer from './footer';
 import Introduction from './introduction';
 import SkillsAndProjects from './skillsAndProjects';
+import { useRouter } from 'next/router'
 
 function Home() {
+  const router = useRouter()
   const [scrollY] = useGetScrollView();
 
   const getTitleHead = () => {
@@ -17,16 +20,33 @@ function Home() {
     return ""
   }
 
+  React.useEffect(() => {
+    router.push("/")
+  }, [])
+
   return (
     <React.Fragment>
       <Head>
         <title>{`Ommi Putera - ${getTitleHead()}`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <div className='hidden lg:block'>
+        <NavigationGuide
+          idExperience="experiences"
+          idSkillsAndProject="skills-and-project"
+          idFooter="footer"
+        />
+      </div>
       <Introduction />
-      <Experiences />
-      <SkillsAndProjects />
-      <Footer />
+      <div id="experiences">
+        <Experiences />
+      </div>
+      <div id="skills-and-project">
+        <SkillsAndProjects />
+      </div>
+      <div id="footer">
+        <Footer />
+      </div>
     </React.Fragment>
   )
 }
