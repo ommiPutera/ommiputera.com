@@ -40,7 +40,7 @@ export function BurgerMenu({
         onClick={onClick}
         className={clsx(
           "fixed z-40 right-4 md:right-24 top-[50px] sm:top-10 md:top-16 bg-brown rounded-full p-2 md:p-3",
-          `${scrollY > 30 ? "visible animate__burger" : "visible md:invisible"}`
+          `${scrollY > 30 ? "visible top-[18px] animate__burger" : "visible md:invisible"}`
         )}
       >
         {
