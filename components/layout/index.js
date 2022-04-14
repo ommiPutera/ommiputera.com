@@ -32,6 +32,9 @@ export default function Layout({ children }) {
 
   return (
     <React.Fragment>
+      <div className="bg-orange-100 text-center py-1.5 text-sm">
+        Note: Sorry, this website is under development. 🚧🚧
+      </div>
       <BurgerMenu
         open={openSideNav}
         scrollY={scrollY}
