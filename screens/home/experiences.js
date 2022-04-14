@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Experiences() {
+export default function Experiences() {
   return (
     <React.Fragment>
       <div className="min-h-screen">
@@ -8,6 +8,4 @@ function Experiences() {
       </div>
     </React.Fragment>
   )
-}
-
-export default Experiences;
+};

@@ -1,9 +1,9 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 import useScrollBlock from '../../hooks/useScrollBlock'
+import { BurgerMenu, SideMenu } from '../shared'
 import Footer from './footer'
 import Header from './header'
-import { BurgerMenu, SideMenu } from '../shared'
-import { useRouter } from 'next/router'
 
 export default function Layout({ children }) {
   const router = useRouter()
@@ -32,7 +32,11 @@ export default function Layout({ children }) {
 
   return (
     <React.Fragment>
-      <BurgerMenu scrollY={scrollY} open={openSideNav} onClick={() => setOpenSideNav(!openSideNav)}>
+      <BurgerMenu
+        open={openSideNav}
+        scrollY={scrollY}
+        onClick={() => setOpenSideNav(!openSideNav)}
+      >
         <SideMenu
           open={openSideNav}
           setOpen={setOpenSideNav}

@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from 'react'
 import CenterContent from '../../components/centerContent'
 
-function Contact() {
+export default function Contact() {
   return (
     <React.Fragment>
       <Head>
@@ -22,6 +22,4 @@ function Contact() {
       </div>
     </React.Fragment>
   )
-}
-
-export default Contact;
+};

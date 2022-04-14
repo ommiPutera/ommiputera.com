@@ -1,14 +1,14 @@
 import Head from "next/head";
-import React from 'react'
+import { useRouter } from 'next/router';
+import React from 'react';
 import NavigationGuide from "../../components/navigationGuide";
 import useGetScrollView from "../../hooks/useGetScrollView";
 import Experiences from './experiences';
 import Footer from './footer';
 import Introduction from './introduction';
 import SkillsAndProjects from './skillsAndProjects';
-import { useRouter } from 'next/router'
 
-function Home() {
+export default function Home() {
   const router = useRouter()
   const [scrollY] = useGetScrollView();
 
@@ -49,6 +49,4 @@ function Home() {
       </div>
     </React.Fragment>
   )
-}
-
-export default Home;
+};

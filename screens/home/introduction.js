@@ -1,11 +1,11 @@
-import React from 'react'
-import Marquee from 'react-fast-marquee'
-import Button from '../../components/button'
 import Image from "next/image";
-import CenterContent from '../../components/centerContent'
-import SocialMedia from '../../components/socialMedia'
+import React from 'react';
+import Marquee from 'react-fast-marquee';
+import Button from '../../components/button';
+import CenterContent from '../../components/centerContent';
+import SocialMedia from '../../components/socialMedia';
 
-function Introduction() {
+export default function Introduction() {
   return (
     <React.Fragment>
       <div className="min-h-screen">
@@ -44,6 +44,4 @@ function Introduction() {
       </div>
     </React.Fragment>
   )
-}
-
-export default Introduction
+};

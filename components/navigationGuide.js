@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from './Link'
-import { Indicator } from './shared';
+import React from 'react';
 import useGetScrollView from '../hooks/useGetScrollView';
+import Link from './Link';
+import { Indicator } from './shared';
 
 function NavigationGuide({
   idExperience,

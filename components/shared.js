@@ -1,28 +1,53 @@
-import React from 'react'
-import Link from 'next/link'
 import { MenuIcon, XIcon } from '@heroicons/react/solid'
+import clsx from 'clsx'
+import Link from 'next/link'
+import React from 'react'
 
-export function Indicator({ active, position, className }) {
+export function Indicator({
+  active,
+  position,
+  className
+}) {
   return (
     <React.Fragment>
-      {position === "vertical"
-        ?
-        <div className={`w-[10px] h-[10px] rounded-full ${className} ${active ? "bg-brown" : "bg-transparent"}`}></div>
-        :
-        <div className={`absolute bottom-0 w-[14px] h-[4px] rounded-full ${className} ${active ? "bg-black" : "bg-transparent"}`}></div>
+      {
+        position === "vertical" ?
+          <div className={clsx(
+            "w-[10px] h-[10px] rounded-full",
+            `${active ? "bg-brown" : "bg-transparent"}`,
+            `${className}`,
+          )} />
+          :
+          <div className={clsx(
+            "absolute bottom-0 w-[14px] h-[4px] rounded-full",
+            `${active ? "bg-black" : "bg-transparent"}`,
+            `${className}`,
+          )} />
       }
     </React.Fragment>
   )
 }
 
-export function BurgerMenu({ scrollY, open, onClick, children }) {
+export function BurgerMenu({
+  open,
+  scrollY,
+  onClick,
+  children
+}) {
   return (
     <React.Fragment>
-      <button className={`fixed z-40 right-4 md:right-24 top-4 sm:top-10 md:top-16 bg-brown rounded-full p-2 md:p-3 ${scrollY > 30 ? "visible animate__burger" : "visible md:invisible"}`} onClick={onClick}>
-        {open ?
-          <XIcon className="h-6 w-6 md:h-8 md:w-8 text-white animate__pop" />
-          :
-          <MenuIcon className="h-6 w-6 md:h-8 md:w-8 text-white animate__pop" />
+      <button
+        onClick={onClick}
+        className={clsx(
+          "fixed z-40 right-4 md:right-24 top-4 sm:top-10 md:top-16 bg-brown rounded-full p-2 md:p-3",
+          `${scrollY > 30 ? "visible animate__burger" : "visible md:invisible"}`
+        )}
+      >
+        {
+          open ?
+            <XIcon className="h-6 w-6 md:h-8 md:w-8 text-white animate__pop" />
+            :
+            <MenuIcon className="h-6 w-6 md:h-8 md:w-8 text-white animate__pop" />
         }
       </button>
       {children}
@@ -33,6 +58,7 @@ export function BurgerMenu({ scrollY, open, onClick, children }) {
 export function SideMenu({ open, setOpen, activePage, blockScroll, allowScroll }) {
   if (open) blockScroll()
   if (!open) allowScroll()
+
   return (
     <div className={`w-full top-0 flex justify-end`}>
       <div onClick={() => setOpen(!open)} className={`fixed z-20 bg-gradient-to-r from-light-gray to-black opacity-10 h-screen duration-500 ease-in-out ${open ? "block w-full" : "invisible"}`}>
