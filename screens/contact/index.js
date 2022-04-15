@@ -63,11 +63,21 @@ export default function Contact() {
             <div className="animate__text">
               <h1 className='text-3xl lg:text-[27px] 2xl:text-[30px] leading-[39px] lg:leading-[34px] 2xl:leading-[36px] font-medium'>Let's start a <br /> <span className='text-brown font-medium'>Project</span> Together</h1>
               {
-                !submitted
+                submitted
                 &&
                 <div className="flex justify-between bg-green-300/70 text-black-400 py-2.5 px-4 mt-7 text-center text-sm rounded-md animate__text">
                   <h1>Your message has been sent to Ommi!</h1>
                   <button onClick={() => setSubmitted(false)}>
+                    <XIcon className="h-4 w-4 text-black " />
+                  </button>
+                </div>
+              }
+              {
+                error
+                &&
+                <div className="flex justify-between items-center space-x-3 bg-red-100/70 text-black-400 py-2.5 px-4 mt-7 text-center text-sm rounded-md animate__text">
+                  <h1>Your message can't be sent to Ommi, please check your connection!</h1>
+                  <button onClick={() => setError(false)}>
                     <XIcon className="h-4 w-4 text-black " />
                   </button>
                 </div>
