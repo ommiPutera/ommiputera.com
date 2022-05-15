@@ -25,7 +25,7 @@ export default function Header() {
       <div className='w-full flex justify-start xl:justify-center'>
         <Link href="/">
           <a className="w-fit block md:flex flex-col items-center space-y-2.5 text-black">
-            <span className="text-[24px] xl:text-[18px] font-medium md:font-semibold tracking-tight text-white md:text-black">Ommi Putera</span>
+            <span className={`${router.pathname === '/' && "text-white"} text-[24px] xl:text-[18px] font-semibold tracking-tight md:text-black`}>Ommi Putera</span>
             <Indicator className="hidden md:block" active={indicatorActive === '/'} />
           </a>
         </Link>

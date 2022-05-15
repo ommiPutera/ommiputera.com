@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import React from 'react'
+import useDetecMobileDevice from '../../hooks/useDetecMobileDevice'
 import useScrollBlock from '../../hooks/useScrollBlock'
 import { BurgerMenu, SideMenu } from '../shared'
 import Footer from './footer'
@@ -7,6 +8,8 @@ import Header from './header'
 
 export default function Layout({ children }) {
   const router = useRouter()
+  const { device } = useDetecMobileDevice()
+
   const [openSideNav, setOpenSideNav] = React.useState(false)
   const [indicatorActive, setIndicatorActive] = React.useState('')
   const [scrollY, setScrollY] = React.useState(0);
@@ -31,7 +34,7 @@ export default function Layout({ children }) {
   }, []);
 
   return (
-    <div className={`${router.pathname === "/" && "bg-[url('/profile-home-ver.svg')] md:bg-none bg-no-repeat"}`}>
+    <div className={`${router.pathname === "/" && "bg-[url('/profile-home-ver.png')] h-screen bg-center bg-cover md:bg-none bg-no-repeat"} ${device === "Android" && "bg-fixed delay-75 mb-2"}`}>
       <BurgerMenu
         open={openSideNav}
         scrollY={scrollY}
