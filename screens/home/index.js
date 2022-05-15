@@ -25,7 +25,7 @@ export default function Home() {
   }, [])
 
   return (
-    <React.Fragment>
+    <div>
       <Head>
         <title>{`Ommi Putera - ${getTitleHead()}`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -47,6 +47,6 @@ export default function Home() {
       <div id="footer">
         <Footer />
       </div>
-    </React.Fragment>
+    </div>
   )
 };

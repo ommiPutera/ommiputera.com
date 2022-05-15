@@ -24,29 +24,35 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setLoading(true)
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: inputs.name,
-        email: inputs.email,
-        message: inputs.message
-      })
-    }).then((res) => {
-      if (res.status === 201) {
-        setInputs({
-          name: "",
-          email: "",
-          message: "",
+    if (!inputs.name || !inputs.email || !inputs.message) {
+      setError(true)
+    } else {
+      setLoading(true)
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: inputs.name,
+          email: inputs.email,
+          message: inputs.message
         })
-        setSubmitted(true)
-        setLoading(false)
-      }
-    }).catch((err) => err && setError(true))
+      }).then((res) => {
+        if (res.status === 201) {
+          setInputs({
+            name: "",
+            email: "",
+            message: "",
+          })
+          setError(false)
+          setSubmitted(true)
+          setLoading(false)
+        }
+      }).catch((err) => err && setError(true))
+    }
+
   }
 
 
@@ -76,7 +82,7 @@ export default function Contact() {
                 error
                 &&
                 <div className="flex justify-between items-center space-x-3 bg-red-100/70 text-black-400 py-2.5 px-4 mt-7 text-center text-sm rounded-md animate__text">
-                  <h1>Your message can't be sent to Ommi, please check your connection!</h1>
+                  <h1>Your message can't be sent to Ommi, please fill in all the fields or check your connection.</h1>
                   <button onClick={() => setError(false)}>
                     <XIcon className="h-4 w-4 text-black " />
                   </button>

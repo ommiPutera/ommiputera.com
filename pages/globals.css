@@ -1,3 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate__pop {
+    animation: pop 0.3s ease-in-out;
+    transition-delay: 75ms;
+  }
+
+  .animate__pop__image {
+    animation: pop_image 0.4s linear;
+    transition-delay: 200ms;
+    @apply transition-all;
+  }
+
+  .animate__text {
+    animation: text_ 0.4s ease-in-out;
+    transition-delay: 75ms;
+    @apply transition-all;
+  }
+
+  .animate__component {
+    animation: comp_ 0.4s ease-in-out;
+    transition-delay: 75ms;
+    @apply transition-all;
+  }
+
+  .animate__burger {
+    animation: burger_ 0.6s ease-in-out;
+    transition-delay: 200ms;
+    @apply transition-all;
+  }
+}
+
 html,
 body {
   font-family: "Open Sans", sans-serif;
@@ -14,35 +49,6 @@ body::-webkit-scrollbar {
 .autofill__block:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #fafafa inset;
   transition: background-color 5000s ease-in-out 0s;
-}
-
-.animate__pop {
-  animation: pop 0.3s ease-in-out;
-  transition-delay: 75ms;
-}
-
-.animate__pop__image {
-  animation: pop_image 0.4s linear;
-  transition-delay: 200ms;
-  @apply transition-all;
-}
-
-.animate__text {
-  animation: text_ 0.4s ease-in-out;
-  transition-delay: 75ms;
-  @apply transition-all;
-}
-
-.animate__component {
-  animation: comp_ 0.4s ease-in-out;
-  transition-delay: 75ms;
-  @apply transition-all;
-}
-
-.animate__burger {
-  animation: burger_ 0.6s ease-in-out;
-  transition-delay: 200ms;
-  @apply transition-all;
 }
 
 @keyframes pop {

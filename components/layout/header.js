@@ -15,7 +15,7 @@ export default function Header() {
   }, [router.pathname])
 
   return (
-    <nav className="flex items-center flex-grow justify-between top-0 z-10 sticky sm:relative border-b sm:border-none bg-white sm:bg-light-gray md:relative text-black font-semibold text-base xl:mt-6 mb-3 mt-0 px-6 sm:px-0 py-6 md:py-3 sm:mt-2 sm:mx-10 md:mx-16">
+    <nav className="flex items-center flex-grow justify-between top-0 z-10 sm:relative border-none md:bg-light-gray md:relative text-black font-semibold text-base xl:mt-6 mb-3 mt-0 px-6 sm:px-0 pb-6 pt-8 md:py-3 sm:mt-2 sm:mx-10 md:mx-16">
       <div className="w-1/3 hidden xl:block">
         <div className="flex space-x-3">
           <Image src="/indonesia-flag.svg" loading='eager' width="16" height="16" />
@@ -25,7 +25,7 @@ export default function Header() {
       <div className='w-full flex justify-start xl:justify-center'>
         <Link href="/">
           <a className="w-fit block md:flex flex-col items-center space-y-2.5 text-black">
-            <span className="text-xl xl:text-[18px] font-semibold tracking-tight text-black">Ommi Putera</span>
+            <span className="text-[24px] xl:text-[18px] font-medium md:font-semibold tracking-tight text-white md:text-black">Ommi Putera</span>
             <Indicator className="hidden md:block" active={indicatorActive === '/'} />
           </a>
         </Link>
