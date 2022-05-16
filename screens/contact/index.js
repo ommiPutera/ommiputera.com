@@ -65,9 +65,9 @@ export default function Contact() {
 
       <div className="min-h-screen">
         <CenterContent>
-          <div>
+          <div className="mt-16 md:m-0">
             <div className="animate__text">
-              <h1 className='text-3xl lg:text-[27px] 2xl:text-[30px] leading-[39px] lg:leading-[34px] 2xl:leading-[36px] font-medium'>Let's start a <br /> <span className='text-brown font-medium'>Project</span> Together</h1>
+              <h1 className='text-3xl lg:text-[27px] 2xl:text-[30px] leading-[32px] lg:leading-[34px] 2xl:leading-[34px] font-semibold'>Let's start a <br /> <span className='text-brown'>Project</span> Together</h1>
               {
                 submitted
                 &&
@@ -89,7 +89,7 @@ export default function Contact() {
                 </div>
               }
             </div>
-            <form onSubmit={handleSubmit} className="mt-7 space-y-6 animate__text">
+            <form onSubmit={handleSubmit} className="mt-16 space-y-6 animate__text">
               <div className="space-y-1">
                 <h3 className="font-medium">What's your name?</h3>
                 <input
