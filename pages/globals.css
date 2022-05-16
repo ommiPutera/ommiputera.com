@@ -31,6 +31,19 @@
     transition-delay: 200ms;
     @apply transition-all;
   }
+
+  .animate__welcome {
+    animation: welcome_ 1s ease-in-out;
+  }
+
+  .animate__welcome_home {
+    animation: welcome_home 0.6s ease-in-out;
+  }
+
+  .animate__text_welcome::before {
+    content: "• Enjoyed.";
+    animation: welcome_text infinite 3s;
+  }
 }
 
 html,
@@ -113,5 +126,51 @@ body::-webkit-scrollbar {
   0% {
     transform: translate(0, -160%);
     @apply opacity-30;
+  }
+}
+
+@keyframes welcome_ {
+  100% {
+    @apply text-transparent;
+    transform: scale(2.4);
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+  }
+  30% {
+    @apply text-transparent;
+    transform: scale(2);
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  0% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes welcome_home {
+  100% {
+    transform: translate(0, 0);
+    @apply bg-opacity-100;
+  }
+  50% {
+    @apply bg-opacity-60;
+  }
+  0% {
+    transform: translate(0, -3%);
+    @apply bg-opacity-10;
+  }
+}
+
+@keyframes welcome_text {
+  0% {
+    content: "• Hello!";
+  }
+
+  50% {
+    content: "• Welcome to my website.";
+  }
+
+  75% {
+    content: "• Nice to have you here.";
   }
 }

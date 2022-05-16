@@ -4,8 +4,10 @@ import Marquee from 'react-fast-marquee';
 import Button from '../../components/button';
 import CenterContent from '../../components/centerContent';
 import SocialMedia from '../../components/socialMedia'
+import useDetecMobileDevice from "../../hooks/useDetecMobileDevice";
 
 export default function Introduction() {
+  const { device } = useDetecMobileDevice()
   return (
     <React.Fragment>
       <div className="min-h-screen">
@@ -13,10 +15,10 @@ export default function Introduction() {
           <div className='md:col-span-6 flex items-center md:pr-10 w-0 h-0 md:w-[300px] md:h-[300px] 2xl:w-[340px] 2xl:h-[340px] animate__pop__image'>
             <Image src="/profile-home.svg" loading='eager' layout="fixed" width="380" height="380" />
           </div>
-          <div className='md:col-span-6 mt-[460px] md:mt-0 md:pl-10 flex flex-col items-start justify-center'>
-            <h1 className='text-[25px] lg:text-[27px] 2xl:text-[30px] leading-[30px] lg:leading-[34px] 2xl:leading-[36px] font-medium animate__text text-white md:text-black'>I am a <span className='text-brown font-semibold underline underline-offset-4'>Front-end</span> Engineer <br /> & <span className='text-brown font-semibold underline underline-offset-4'>Design</span> Enthusiast.</h1>
-            <h1 className='text-[25px] lg:text-[27px] 2xl:text-[30px] leading-[30px] lg:leading-[34px] 2xl:leading-[36px] font-medium text-gray-200 md:text-black/60 animate__text mt-5'>Helping brands to stand out.</h1>
-            <p className='text-base lg:text-sm mt-28 lg:mt-9 leading-6 animate__text text-black-400'>After I graduated from college (August 2020), I decided to further develop myself into the digital world which I think is more promising for my future career. Previously, I am graduated from the Web and Mobile Development program (Bootcamp) at Purwadhika Digital Technologhy School, Jakarta. and on October fourth, 2021 until now I am working as a Frontend Developer at Dipay Indonesia, I take care of legacy code, add a feature that the company needs, and collaborate with different teams such as the Product team, the Mobile team, and of course Backend team for the Web services. </p>
+          <div className={`md:col-span-6 md:mt-0 md:pl-10 flex flex-col items-start justify-center ${device === "iPhone" ? "mt-[410px]" : "mt-[460px]"}`}>
+            <h1 className='text-[25px] lg:text-[23px] 2xl:text-[25px] leading-[30px] 2xl:leading-[34px] font-medium animate__text text-white md:text-black'>I am a <span className='text-brown font-semibold underline underline-offset-4'>Front-end</span> Engineer <br /> & <span className='text-brown font-semibold underline underline-offset-4'>Design</span> Enthusiast.</h1>
+            <h1 className='text-[25px] lg:text-[23px] 2xl:text-[25px] leading-[30px] 2xl:leading-[34px] font-medium text-gray-200 md:text-black/60 animate__text mt-5 lg:m-0'>Helping brands to stand out.</h1>
+            <p className='text-base lg:text-xs mt-28 lg:mt-4 leading-6 lg:leading-5 animate__text text-black-400'>After I graduated from college (August 2020), I decided to further develop myself into the digital world which I think is more promising for my future career. Previously, I am graduated from the Web and Mobile Development program (Bootcamp) at Purwadhika Digital Technologhy School, Jakarta. and on October fourth, 2021 until now I am working as a Frontend Developer at Dipay Indonesia, I take care of legacy code, add a feature that the company needs, and collaborate with different teams such as the Product team, the Mobile team, and of course Backend team for the Web services. </p>
             <span className="mt-12 md:mt-5 animate__component">
               <Button title="Project" className="px-20 py-6 text-base md:text-xs mb-16 md:mb-0" />
               <SocialMedia
@@ -28,9 +30,9 @@ export default function Introduction() {
             </span>
           </div>
         </CenterContent>
-        <div className="block absolute right-0 top-[420px] md:top-auto">
+        <div className={`block absolute right-0 md:top-auto ${device === "iPhone" ? "top-[350px]" : "top-[400px]"}`}>
           <Marquee speed={45} gradient={false}>
-            <h1 className="text-[100px] font-normal md:text-9xl text-white md:text-black/30 md:font-light">Ommi Putera - Frontend Engineer - </h1>
+            <h1 className="text-[120px] font-normal md:text-9xl text-white md:text-black/20 md:font-normal">Ommi Putera - Frontend Engineer - </h1>
           </Marquee>
         </div>
         <div className="md:mt-[160px]">
